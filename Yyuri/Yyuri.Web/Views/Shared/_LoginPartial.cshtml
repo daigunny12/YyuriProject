@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Yyuri.Domain.Identity.Models
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+<!-- header -->
+<div class="header" id="home">
+    <div class="container">
+        <ul>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li> <a href="#" data-toggle="modal" data-target="#"><i class="fa fa-user" aria-hidden="true"></i> Hello @User.Identity.Name! </a></li>
+                <li> <a href="@Url.Action("Logout","Account")"><i class="fa fa-sign-out" aria-hidden="true"></i> Đăng xuất </a></li>
+            }
+            else
+            {
+                <li> <a href="#" data-toggle="modal" data-target="#UserLoginModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Đăng nhập </a></li>
+                <li> <a href="#" data-toggle="modal" data-target="#UserRegistrationModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Đăng ký </a></li>
+            }
+            <li><i class="fa fa-phone" aria-hidden="true"></i> Call : 01234567898</li>
+            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+        </ul>
+    </div>
+</div>
+<!-- //header -->

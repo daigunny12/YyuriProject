@@ -1,0 +1,17 @@
+F:\YyuriProject\Yyuri\Yyuri.Commons\bin\Debug\netcoreapp3.1\Yyuri.Commons.deps.json
+F:\YyuriProject\Yyuri\Yyuri.Commons\bin\Debug\netcoreapp3.1\Yyuri.Commons.runtimeconfig.json
+F:\YyuriProject\Yyuri\Yyuri.Commons\bin\Debug\netcoreapp3.1\Yyuri.Commons.runtimeconfig.dev.json
+F:\YyuriProject\Yyuri\Yyuri.Commons\bin\Debug\netcoreapp3.1\Yyuri.Commons.dll
+F:\YyuriProject\Yyuri\Yyuri.Commons\bin\Debug\netcoreapp3.1\Yyuri.Commons.pdb
+F:\YyuriProject\Yyuri\Yyuri.Commons\bin\Debug\netcoreapp3.1\Vi\Yyuri.Commons.resources.dll
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.csproj.AssemblyReference.cache
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.Resource.Resource.resources
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.Resource.Resource.Vi.resources
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.csproj.GenerateResource.cache
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.AssemblyInfoInputs.cache
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.AssemblyInfo.cs
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.csproj.CoreCompileInputs.cache
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Vi\Yyuri.Commons.resources.dll
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.dll
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.pdb
+F:\YyuriProject\Yyuri\Yyuri.Commons\obj\Debug\netcoreapp3.1\Yyuri.Commons.genruntimeconfig.cache

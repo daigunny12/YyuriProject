@@ -1,0 +1,17 @@
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\bin\Debug\netcoreapp3.1\MixQuaShop.Commons.deps.json
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\bin\Debug\netcoreapp3.1\MixQuaShop.Commons.dll
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.csprojAssemblyReference.cache
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.AssemblyInfoInputs.cache
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.AssemblyInfo.cs
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\bin\Debug\netcoreapp3.1\MixQuaShop.Commons.runtimeconfig.json
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\bin\Debug\netcoreapp3.1\MixQuaShop.Commons.runtimeconfig.dev.json
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.genruntimeconfig.cache
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.Resource.Resource.resources
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.Resource.Resource.Vi.resources
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.csproj.GenerateResource.cache
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.csproj.CoreCompileInputs.cache
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\bin\Debug\netcoreapp3.1\MixQuaShop.Commons.pdb
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\bin\Debug\netcoreapp3.1\Vi\MixQuaShop.Commons.resources.dll
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\Vi\MixQuaShop.Commons.resources.dll
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.dll
+D:\MixQuaShopProject\MixQuaShop\MixQuaShop.Commons\obj\Debug\netcoreapp3.1\MixQuaShop.Commons.pdb

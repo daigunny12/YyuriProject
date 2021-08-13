@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ServiceCollectionExtension.cs~RF4598e444.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack.NetCore" Version="1.5.0.1" />
+    <PackageReference Include="log4net" Version="2.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="3.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Yyuri.Commons\Yyuri.Commons.csproj" />
+    <ProjectReference Include="..\Yyuri.Domain\Yyuri.Domain.csproj" />
+    <ProjectReference Include="..\Yyuri.Models\Yyuri.Models.csproj" />
+  </ItemGroup>
+
+</Project>
