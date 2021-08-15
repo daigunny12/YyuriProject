@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t2ZMuVegnjQvpjJRI6KENACOF4yKAZUjR4AIf4UG2ndewTOcpOQJR7nqd4o9cQa7BoPnB2HwG2nyg+5yIYeqfg==",
+  "dgSpecHash": "nvbcVvtGZPvJ7oQ0CCIEz9lGmYyWIY1lK/rmPjW4XeNz0JioVPbqzq6fLYIxsDEj/L8Gk7lbPjh4fjmP9rv8yg==",
   "success": true,
-  "projectFilePath": "F:\\YyuriProject\\Yyuri\\Yyuri.Data\\Yyuri.Data.csproj",
+  "projectFilePath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Data\\Yyuri.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

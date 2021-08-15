@@ -7344,11 +7344,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\YyuriProject\\Yyuri\\Yyuri.Models\\Yyuri.Models.csproj",
+      "projectUniqueName": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Models\\Yyuri.Models.csproj",
       "projectName": "Yyuri.Models",
-      "projectPath": "F:\\YyuriProject\\Yyuri\\Yyuri.Models\\Yyuri.Models.csproj",
+      "projectPath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Models\\Yyuri.Models.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\YyuriProject\\Yyuri\\Yyuri.Models\\obj\\",
+      "outputPath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7369,11 +7369,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "F:\\YyuriProject\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj": {
-              "projectPath": "F:\\YyuriProject\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj"
+            "F:\\YyuriProjectt\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj": {
+              "projectPath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj"
             },
-            "F:\\YyuriProject\\Yyuri\\Yyuri.Domain\\Yyuri.Domain.csproj": {
-              "projectPath": "F:\\YyuriProject\\Yyuri\\Yyuri.Domain\\Yyuri.Domain.csproj"
+            "F:\\YyuriProjectt\\Yyuri\\Yyuri.Domain\\Yyuri.Domain.csproj": {
+              "projectPath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Domain\\Yyuri.Domain.csproj"
             }
           }
         }

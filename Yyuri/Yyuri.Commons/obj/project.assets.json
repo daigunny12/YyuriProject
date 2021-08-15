@@ -7052,11 +7052,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\YyuriProject\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj",
+      "projectUniqueName": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj",
       "projectName": "Yyuri.Commons",
-      "projectPath": "F:\\YyuriProject\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj",
+      "projectPath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Commons\\Yyuri.Commons.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\YyuriProject\\Yyuri\\Yyuri.Commons\\obj\\",
+      "outputPath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Commons\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

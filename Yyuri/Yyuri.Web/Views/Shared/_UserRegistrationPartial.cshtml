@@ -9,6 +9,7 @@
         <div class="modal-body modal-body-sub_agile">
             <div class="col-md-8 modal_body_left modal_body_left1">
                 <h3 class="agileinfo_sign">ĐĂNG KÝ</h3>
+                
                 <form id="UserRegistrationForm" name="UserRegistrationForm" asp-controller="Account" asp-action="RegisterUser">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="RegistrationInValid">
@@ -16,16 +17,22 @@
                         <input asp-for="Email" type="email" name="Email" required="">
                         <label>Email</label>
                         <span asp-validation-for="Email" class="text-danger"></span>
+                        <div id="alert_label_email_register">
+                        </div>
                     </div>
                     <div class="styled-input">
-                        <input asp-for="Password" type="password" name="password" required="">
+                        <input asp-for="Password" type="password" name="Password" required="">
                         <label>Mật khẩu</label>
-                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <span asp-validation-for="Password"></span>
+                        <div id="alert_label_password_register">
+                        </div>
                     </div>
                     <div class="styled-input">
-                        <input asp-for="ConfirmPassword" type="password" name="Confirm Password" required="">
+                        <input asp-for="ConfirmPassword" type="password" name="ConfirmPassword" required="">
                         <label>Xác nhận mật khẩu</label>
-                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        <span asp-validation-for="ConfirmPassword"></span>
+                        <div id="alert_label_confirmpassword_register">
+                        </div>
                     </div>
                     <button id="register" name="register" type="button">Đăng ký</button>
                 </form>

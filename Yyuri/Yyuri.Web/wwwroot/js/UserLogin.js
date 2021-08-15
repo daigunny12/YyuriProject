@@ -11,6 +11,7 @@
         var email = $("#UserLoginModal input[name = 'Email']").val();
         var password = $("#UserLoginModal input[name = 'Password']").val();
         var rememberMe = $("#UserLoginModal input[name = 'RememberMe']").prop('checked');
+        var re = /\S+@\S+\.\S+/;
 
         var userInput = {
             __RequestVerificationToken: antiForgeryToken,
@@ -18,6 +19,30 @@
             Password: password,
             RememberMe: rememberMe
         };
+
+        //check null email
+        if (email.length == 0) {
+            PresentClosableBootstrapAlert("#alert_label_email_login", "warning", "Vui lòng nhập Email");
+            return;
+        } else {
+            CloseAlert("#alert_label_email_login");
+        }
+
+        //check format email
+        if (!re.test(email)) {
+            PresentClosableBootstrapAlert("#alert_label_email_login", "warning", "Địa chỉ Email không đúng định dạng");
+            return;
+        } else {
+            CloseAlert("#alert_label_email_login");
+        }
+
+        //check null password
+        if (password.length == 0) {
+            PresentClosableBootstrapAlert("#alert_label_password_login", "warning", "Vui lòng nhập mật khẩu");
+            return;
+        } else {
+            CloseAlert("#alert_label_password_login");
+        }
 
         $.ajax({
             type: "POST",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D7uTVg+kXG0W4FiV5w7OT2WrZuSN9ik90eHS9Llu7hsxfduRyEVikr9J8RHAMHiDDHZrYzrS02OG2tmsA47FgQ==",
+  "dgSpecHash": "A1b54m3leTmodgX/t/+6UqUUzRz/bgicr65si85OzUMcZ5VoV8bWIFzpi5hpKDybRwi1jjQph8/rKz7t7EoDGQ==",
   "success": true,
-  "projectFilePath": "F:\\YyuriProject\\Yyuri\\Yyuri.Domain\\Yyuri.Domain.csproj",
+  "projectFilePath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Domain\\Yyuri.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

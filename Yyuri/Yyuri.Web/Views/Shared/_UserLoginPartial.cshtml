@@ -9,18 +9,30 @@
         <div class="modal-body modal-body-sub_agile">
             <div class="col-md-8 modal_body_left modal_body_left1">
                 <h3 class="agileinfo_sign">Đăng Nhập</h3>
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div id="notification_login">
+                        <div class="alert alert-danger fade in alert-dismissible show">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    </div>
+                }
                 <form id="UserLoginForm" asp-controller="Account" asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="LoginInValid">
                     <div class="styled-input agile-styled-input-top">
-                        <input asp-for="Email" type="email" name="Email" required="">
+                        <input asp-for="Email" type="email" name="Email">
                         <label>Email</label>
                         <span asp-validation-for="Email" class="text-danger"></span>
+                        <div id="alert_label_email_login">
+                        </div>
                     </div>
                     <div class="styled-input">
-                        <input asp-for="Password" type="password" name="Password" required="">
+                        <input asp-for="Password" type="password" name="Password">
                         <label>Mật khẩu</label>
                         <span asp-validation-for="Password" class="text-danger"></span>
+                        <div id="alert_label_password_login">
+                        </div>
                     </div>
                     <div class="styled-input">
                         <input asp-for="RememberMe" class="form-check-input">
@@ -56,7 +68,7 @@
                 </ul>
                 <div class="clearfix"></div>
                 <p>Thành viên mới?<a href="#" data-toggle="modal" data-target="#UserRegistrationModal" style="color:darkblue">  Đăng ký </a>ngay</p>
-                
+
             </div>
             <div class="col-md-4 modal_body_right modal_body_right1">
                 <img src="~/EliteTemplate/images/log_pic.jpg" alt=" " />

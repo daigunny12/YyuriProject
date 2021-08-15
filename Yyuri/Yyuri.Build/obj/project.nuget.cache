@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dOsTJEBk/LC/KQYyAp+0MiFfC0XMvHDKIckQL0eZfmxzJfG55G/MghEmVywK5XjKBrorlpOvss6jqyWkOrHZ5w==",
+  "dgSpecHash": "c7DhW0GDdEdecWzkjFGe7yu+zDyzpfhSfDRXQzQi5gvzDcB4pCqAveF6G8pX32I06+JW74VCoc25BTBal1PCjg==",
   "success": true,
-  "projectFilePath": "F:\\YyuriProject\\Yyuri\\Yyuri.Build\\Yyuri.Build.csproj",
+  "projectFilePath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Build\\Yyuri.Build.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",

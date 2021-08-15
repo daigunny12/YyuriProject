@@ -46,7 +46,8 @@ namespace Yyuri.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt");
+                    //ModelState.AddModelError(string.Empty, "Invalid login attempt");
+                    ViewBag.ErrorMessage = "Email hoặc mật khẩu không đúng";
                 }
 
             }
@@ -76,58 +77,58 @@ namespace Yyuri.Web.Controllers
         }
         #endregion Logout
 
-        //#region Register
+        #region Register
 
-        //[AllowAnonymous]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> RegisterUser(RegisterViewModel registrationModel)
-        //{
-        //    registrationModel.RegistrationInValid = "true";
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RegisterUser(RegisterViewModel registrationModel)
+        {
+            registrationModel.RegistrationInValid = "true";
 
-        //    if (ModelState.IsValid)
-        //    {
-        //        User user = new User
-        //        {
-        //            UserName = registrationModel.Email,
-        //            Email = registrationModel.Email,
-        //        };
+            if (ModelState.IsValid)
+            {
+                User user = new User
+                {
+                    UserName = registrationModel.Email,
+                    Email = registrationModel.Email,
+                };
 
-        //        var result = await _userManager.CreateAsync(user, registrationModel.Password);
+                var result = await _userManager.CreateAsync(user, registrationModel.Password);
 
-        //        if (result.Succeeded)
-        //        {
-        //            registrationModel.RegistrationInValid = "";
+                if (result.Succeeded)
+                {
+                    registrationModel.RegistrationInValid = "";
 
-        //            await _signInManager.SignInAsync(user, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
 
-        //            return PartialView("_UserRegistrationPartial", registrationModel);
-        //        }
+                    return PartialView("_UserRegistrationPartial", registrationModel);
+                }
 
-        //        AddErrorsToModelState(result);
+                AddErrorsToModelState(result);
 
-        //    }
-        //    return PartialView("_UserRegistrationPartial", registrationModel);
+            }
+            return PartialView("_UserRegistrationPartial", registrationModel);
 
-        //}
+        }
 
-        //[AllowAnonymous]
-        //public async Task<bool> UserNameExists(string userName)
-        //{
-        //    bool userNameExists = this._accountService.UserNameExists(userName);
+        [AllowAnonymous]
+        public async Task<bool> UserNameExists(string userName)
+        {
+            bool userNameExists = this._accountService.UserNameExists(userName);
 
-        //    if (userNameExists)
-        //        return true;
+            if (userNameExists)
+                return true;
 
-        //    return false;
+            return false;
 
-        //}
+        }
 
-        //private void AddErrorsToModelState(IdentityResult result)
-        //{
-        //    foreach (var error in result.Errors)
-        //        ModelState.AddModelError(string.Empty, error.Description);
-        //}
-        //#endregion Register
+        private void AddErrorsToModelState(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+                ModelState.AddModelError(string.Empty, error.Description);
+        }
+        #endregion Register
     }
 }
