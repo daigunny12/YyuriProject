@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Fihfe6GVwTkColEgWT4EA9m58xgWvB6lSN0uvbb7FkXT/BIA+REZCZLDhJ+F+ADhaXrcynQ6hoI/1jRcAfq+3Q==",
+  "dgSpecHash": "U4TCeiwiXNdyJl6g0o8l9JYh1rpOiIy0M+l9jWqu2ufC81uJPCX/fYcUyAmVQoqVyrgPlSBZqBnzL2pYPPpeLw==",
   "success": true,
   "projectFilePath": "F:\\YyuriProjectt\\Yyuri\\Yyuri.Web\\Yyuri.Web.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,8 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.6\\microsoft.aspnetcore.authentication.facebook.3.1.6.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.6\\microsoft.aspnetcore.authentication.google.3.1.6.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.7\\microsoft.aspnetcore.authorization.3.1.7.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",

@@ -205,5 +205,11 @@ namespace Yyuri.Data.Accounts.Repositories
         {
             return DataContext.User.Any(u => u.UserName.ToUpper() == userName.ToUpper());
         }
+
+        public User UserNameExist(string userName)
+        {
+            return DataContext.User.SingleOrDefault(x => x.UserName == userName);
+        }
+
     }
 }

@@ -477,3 +477,5 @@ F:\YyuriProjectt\Yyuri\Yyuri.Web\obj\Debug\netcoreapp3.1\Yyuri.Web.csproj.CopyCo
 F:\YyuriProjectt\Yyuri\Yyuri.Web\obj\Debug\netcoreapp3.1\Yyuri.Web.dll
 F:\YyuriProjectt\Yyuri\Yyuri.Web\obj\Debug\netcoreapp3.1\Yyuri.Web.pdb
 F:\YyuriProjectt\Yyuri\Yyuri.Web\obj\Debug\netcoreapp3.1\Yyuri.Web.genruntimeconfig.cache
+F:\YyuriProjectt\Yyuri\Yyuri.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+F:\YyuriProjectt\Yyuri\Yyuri.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll

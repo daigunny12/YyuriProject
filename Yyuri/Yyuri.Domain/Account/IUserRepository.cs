@@ -22,6 +22,8 @@ namespace Yyuri.Domain.Accounts.Repositories
         //DbSet<UserRole> GetUserRoleRepo();
         //List<Guid> GetUserIds(List<String> deviceId);
         //Guid GetUserId(string deviceCheckinUserId);
+
         bool UserNameExists(string userName);
+        User UserNameExist(string userName);
     }
 }

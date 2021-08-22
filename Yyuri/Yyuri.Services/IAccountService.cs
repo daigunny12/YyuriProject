@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Yyuri.Domain.Identity.Models;
 
 namespace Yyuri.Services
 {
@@ -13,5 +14,6 @@ namespace Yyuri.Services
         //UserSearchViewModel SearchWithPaging(string searchText, int pageIndex);
 
         bool UserNameExists(string userName);
+        User InsertForFacebook(User user);
     }
 }

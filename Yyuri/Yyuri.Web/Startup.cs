@@ -22,6 +22,9 @@ using Yyuri.Services.Extensions;
 using AutoMapper;
 using Yyuri.Models.Mappers;
 using Yyuri.Data.EntityFramework;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Yyuri.Web
 {
@@ -88,6 +91,33 @@ namespace Yyuri.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddViewLocalization(Microsoft.AspNetCore.Mvc.Razor.LanguageViewLocationExpanderFormat.Suffix)
                 .AddDataAnnotationsLocalization();
+
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+            //})
+            //    .AddCookie()
+            //    .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+            //    {
+            //        options.ClientId = Configuration["Google:ClientId"];
+            //        options.ClientSecret = Configuration["Google:ClientSecret"];
+            //        options.ClaimActions.MapJsonKey("urn:google:picture", "picture", "url");
+            //    });
+
+            services.AddAuthentication()
+                .AddGoogle(opts =>
+                {
+                    opts.ClientId = Configuration["Google:ClientId"];
+                    opts.ClientSecret = Configuration["Google:ClientSecret"];
+                    opts.SignInScheme = IdentityConstants.ExternalScheme;
+                })
+                .AddFacebook(opts =>
+                 {
+                     opts.ClientId = Configuration["Facebook:AppID"];
+                     opts.ClientSecret = Configuration["Facebook:AppSecret"];
+                     opts.SignInScheme = IdentityConstants.ExternalScheme;
+                 });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -130,8 +160,11 @@ namespace Yyuri.Web
                 SupportedUICultures = supportedCultures
             });
 
-            app.UseMiddleware<ExceptionMiddleware>();
             app.UseAuthentication();
+            app.UseAuthorization();
+
+            app.UseMiddleware<ExceptionMiddleware>();
+            //app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 //routes.MapRoute(
