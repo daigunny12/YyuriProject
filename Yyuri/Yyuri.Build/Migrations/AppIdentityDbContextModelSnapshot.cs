@@ -19,6 +19,25 @@ namespace Yyuri.Build.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Yyuri.Domain.Account.Models.VerificationEmail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(4)")
+                        .HasMaxLength(4);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VerificationEmails");
+                });
+
             modelBuilder.Entity("Yyuri.Domain.Accounts.Models.Profile", b =>
                 {
                     b.Property<Guid>("Id")

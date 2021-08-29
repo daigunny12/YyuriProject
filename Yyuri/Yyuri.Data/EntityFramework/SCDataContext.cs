@@ -15,6 +15,7 @@ using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
 using Yyuri.Domain.Shop.Model;
+using Yyuri.Domain.Account.Models;
 
 namespace Yyuri.Data.EntityFramework
 {
@@ -126,6 +127,7 @@ namespace Yyuri.Data.EntityFramework
         public virtual DbSet<UserToken> UserToken { get; set; }
 
         public virtual DbSet<Profile> Profile { get; set; }
+        public virtual DbSet<VerificationEmail> VerificationEmail { get; set; }
 
         public virtual DbSet<ContactDetail> ContactDetail { get; set; }
         public virtual DbSet<Error> Error { get; set; }

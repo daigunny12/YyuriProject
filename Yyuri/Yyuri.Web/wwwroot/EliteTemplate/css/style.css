@@ -47,7 +47,7 @@ label{
 }
 /*-- header --*/
 .header {
-    background: #000;
+	background: #ff0a48;
 }
 .header ul li {
     display: inline-block;
@@ -106,6 +106,13 @@ label{
     -o-transition: 0.5s;
     transition: 0.5s;
 }
+
+.social-nav-custom a {
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+}
+
 .model-3d-0 a {
     background:#5C5B5B;
     -webkit-transform-style: preserve-3d;
@@ -133,6 +140,12 @@ label{
 	color:#212121;
 	font-size:12px;
 }
+
+.model-3d-0-custom .front, .model-3d-0-custom .back {
+	width: 160px;
+	height: 40px;
+}
+
 .model-3d-0 .back {
     -webkit-transform: rotateX(90deg) translateZ(18px);
     -moz-transform: rotateX(90deg) translateZ(18px);
@@ -145,6 +158,15 @@ label{
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
+.model-3d-0-custom .back {
+	-webkit-transform: rotateX(90deg) translateZ(25px);
+	-moz-transform: rotateX(90deg) translateZ(25px);
+	-ms-transform: rotateX(90deg) translateZ(25px);
+	-o-transform: rotateX(90deg) translateZ(25px);
+	transform: rotateX(90deg) translateZ(25px);
+}
+
 a.twitter .front {
     background: #00acee;
 }
@@ -176,7 +198,7 @@ a.pinterest .front {
 }
 .w3_agile_social .front i{
 	color: #fff;
-    font-size: 12px;
+    font-size: 13px;
 }
 .w3_agile_social .back i{
 	color: #000;
@@ -252,7 +274,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
     width: 73%;
 }
 .header-bot {
-    padding: 25px 0;
+    padding: 5px 0;
 }
 .header-middle form input[type="search"] {
     outline: none;
@@ -286,7 +308,7 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
     width: 10%;		
 }
 .header-middle {
-	padding:0;
+	padding-top:15px;
 }
 .header-right ul {
     margin-top: 20px;
@@ -1093,7 +1115,7 @@ font-weight:300;
 	background:#111;
     color: #fff;
 }
-.modal-body.modal-body-sub_agile button[type="button"] {
+.modal-body.modal-body-sub_agile button[type="button"]:not(.mod-sendcode-btn) {
 	border: none;
 	padding: 10px 40px 10px;
 	font-size: 14px;

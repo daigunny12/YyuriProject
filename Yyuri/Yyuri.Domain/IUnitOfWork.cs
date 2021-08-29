@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Yyuri.Domain.Account;
 using Yyuri.Domain.Accounts.Repositories;
 using Yyuri.Domain.Address;
 
@@ -19,7 +20,7 @@ namespace Yyuri.Domain
         IAddressRepository AddressRepo { get; }
         IProvinceRepository ProvinceRepo { get; }
         IDistrictRepository DistrictRepo { get; }
-       
+        IVerificationEmailRepository VerificationEmailRepo { get; }
 
     }
 }

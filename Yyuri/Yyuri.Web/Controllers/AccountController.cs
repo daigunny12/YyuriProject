@@ -1,36 +1,38 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Yyuri.Commons;
 using Yyuri.Domain.Identity.Models;
 using Yyuri.Security.Models.Account;
-using Yyuri.Service.EmailEngine;
 using Yyuri.Services;
+using Yyuri.Services.EmailEngine;
 using Yyuri.Services.Extensions;
 
 namespace Yyuri.Web.Controllers
 {
     public class AccountController : BaseController
     {
-        private readonly IEmailSender _emailSender;
         private IAccountService _accountService;
         private IConfiguration _config;
         private string appid;
         private string appsecret;
-        private string host;
+        private IEmailService _emailService;
 
         public AccountController(UserManager<User> userManage,
                                  SignInManager<User> signInManager,
-                                 IEmailSender emailSender,
                                  IConfiguration config,
                                  IAccountService accountService,
+                                 IEmailService emailService,
                                  ILoggerManager logger) : base(userManage, signInManager, logger)
         {
             this._accountService = accountService;
-            _emailSender = emailSender;
             _config = config;
+            _emailService = emailService;
             appid = _config.GetValue<string>("Facebook:AppID");
             appsecret = _config.GetValue<string>("Facebook:AppSecret");
         }
@@ -56,7 +58,7 @@ namespace Yyuri.Web.Controllers
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Email hoặc mật khẩu không đúng";
+                    ViewBag.ErrorMessage = "Email hoặc mật khẩu không đúng!";
                 }
             }
             return PartialView("_UserLoginPartial", loginModel);
@@ -96,35 +98,71 @@ namespace Yyuri.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                User user = new User
+                if (UserNameExists(registrationModel.Email))
                 {
-                    UserName = registrationModel.Email,
-                    Email = registrationModel.Email,
-                    EmailConfirmed = true
-                };
-
-                var result = await _userManager.CreateAsync(user, registrationModel.Password);
-
-                if (result.Succeeded)
-                {
-                    registrationModel.RegistrationInValid = "";
-
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-
-                    return PartialView("_UserRegistrationPartial", registrationModel);
+                    ViewBag.ErrorMessage = "Địa chỉ email này đã được đăng ký!";
+                    registrationModel.InputEmailCode = "block";
+                    registrationModel.InputSlideToUnlock = "none";
                 }
+                else
+                {
+                    if(!CheckVerificationEmail(registrationModel.Email, registrationModel.Code))
+                    {
+                        ViewBag.ErrorMessage = "Mã xác nhận không hợp lệ!";
+                        registrationModel.InputEmailCode = "block";
+                        registrationModel.InputSlideToUnlock = "none";
+                    }
+                    else
+                    {
+                        User user = new User
+                        {
+                            LastName = registrationModel.HoTen,
+                            UserName = registrationModel.Email,
+                            Email = registrationModel.Email,
+                            EmailConfirmed = true
+                        };
 
-                AddErrorsToModelState(result);
+                        var result = await _userManager.CreateAsync(user, registrationModel.Password);
+
+                        if (result.Succeeded)
+                        {
+                            registrationModel.RegistrationInValid = "";
+
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+
+                            return PartialView("_UserRegistrationPartial", registrationModel);
+                        }
+
+                        AddErrorsToModelState(result);
+                    }
+                }        
             }
             return PartialView("_UserRegistrationPartial", registrationModel);
         }
 
         [AllowAnonymous]
-        public async Task<bool> UserNameExists(string userName)
+        public bool UserNameExists(string userName)
         {
-              bool userNameExists = this._accountService.UserNameExists(userName);
+            bool userNameExists = this._accountService.UserNameExists(userName);
 
             if (userNameExists)
+                return true;
+            return false;
+        }
+
+        [AllowAnonymous]
+        public bool CheckVerificationEmail(string email, string code)
+        {
+            //if (_accountService.CheckVerificationEmail(email, code))
+            //    return true;
+            //return false;
+
+            //if(email == TempData["EmailRegister"].ToString() && code == TempData["CodeRegister"].ToString())
+            //    return true;
+            //return false;
+
+
+            if (HttpContext.Session.GetString("EmailRegister") == email && HttpContext.Session.GetString("CodeRegister") == code)
                 return true;
             return false;
         }
@@ -133,6 +171,26 @@ namespace Yyuri.Web.Controllers
         {
             foreach (var error in result.Errors)
                 ModelState.AddModelError(string.Empty, error.Description);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public void EmailVerification(string hoTen, string email)
+        {
+            Random rand = new Random();
+            int randomNumber = rand.Next(1000, 9999);        
+
+            var ten  = hoTen != null ? hoTen : "User";
+
+            HttpContext.Session.SetString("EmailRegister", email);
+            HttpContext.Session.SetString("CodeRegister", randomNumber.ToString());
+
+            //var insertVerificationEmail = _accountService.InsertVerificationEmail(email, randomNumber.ToString());
+            //if (insertVerificationEmail != Guid.Empty || insertVerificationEmail != null)
+            //{
+            string bodyText = _emailService.ComposeVerificationEmail(ten, randomNumber.ToString());
+            _emailService.SendMail(email, ten, "Xác nhận email của bạn", bodyText);
+            //}
         }
 
         #endregion Register

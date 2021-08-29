@@ -1,5 +1,35 @@
-﻿$(function () {
+﻿
+//check password
+function oninputPassWordLogin() {
+    var password = $("#UserLoginModal input[name='Password']").val();
+    if (password.length == 0) {
+        PresentClosableBootstrapAlert("#alert_label_password_login", "warning", "Vui lòng nhập mật khẩu!");
+    } else {
+        CloseAlert("#alert_label_password_login");
+        if (password.length < 6 || !/\d/.test(password)) {
+            PresentClosableBootstrapAlert("#alert_label_password_login", "warning", "Mật khẩu phải có ít nhất 6 ký tự và có ít nhất một chữ số('0' - '9').");
+        } else {
+            CloseAlert("#alert_label_password_login");
+        }
+    }
+}
 
+function oninputEmailLogin() {
+    var email = $("#UserLoginModal input[name = 'Email']").val();
+    var re = /\S+@\S+\.\S+/;
+    if (email.length == 0) {
+        PresentClosableBootstrapAlert("#alert_label_email_login", "warning", "Vui lòng nhập địa chỉ Email!");
+    } else {
+        CloseAlert("#alert_label_email_login");
+        if (!re.test(email)) {
+            PresentClosableBootstrapAlert("#alert_label_email_login", "warning", "Địa chỉ Email không đúng định dạng!");
+        } else {
+            CloseAlert("#alert_label_email_login");
+        }
+    }
+};
+
+$(function () {
     var userLoginButton = $("#UserLoginModal button[name='login']").click(onUserLoginClick);
 
     function onUserLoginClick() {
@@ -74,7 +104,7 @@
             error: function (xhr, ajaxOptions, thrownError) {
                 var errorText = "Status: " + xhr.status + " - " + xhr.statusText;
 
-                PresentClosableBootstrapAlert("#alert_placeholder_login", "danger", "Error!", errorText);
+                PresentClosableBootstrapAlert("#alert_placeholder_login", "danger", errorText);
 
                 console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
             }

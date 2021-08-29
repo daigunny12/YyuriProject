@@ -9,64 +9,76 @@
         <div class="modal-body modal-body-sub_agile">
             <div class="col-md-8 modal_body_left modal_body_left1">
                 <h3 class="agileinfo_sign">ĐĂNG KÝ</h3>
-                
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div id="notification_login">
+                        <div class="alert alert-danger fade in alert-dismissible show">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    </div>
+                }
                 <form id="UserRegistrationForm" name="UserRegistrationForm" asp-controller="Account" asp-action="RegisterUser">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="RegistrationInValid">
+                    <div id="alert_placeholder_register">
+                    </div>
                     <div class="styled-input agile-styled-input-top">
-                        <input asp-for="Email" type="email" name="Email" required="">
+                        <input asp-for="HoTen" type="text" name="HoTen">
+                        <label>Họ tên</label>
+                        <span asp-validation-for="HoTen"></span>
+                        <div id="alert_label_hoten_register">
+                        </div>
+                    </div>
+                    <div class="styled-input">
+                        <input asp-for="Email" type="email" name="Email" oninput="oninputEmailRegister()">
                         <label>Email</label>
                         <span asp-validation-for="Email" class="text-danger"></span>
                         <div id="alert_label_email_register">
                         </div>
                     </div>
                     <div class="styled-input">
-                        <input asp-for="Password" type="password" name="Password" required="">
+                        <input asp-for="Password" type="password" name="Password" oninput="oninputPassWordRegister()">
                         <label>Mật khẩu</label>
                         <span asp-validation-for="Password"></span>
                         <div id="alert_label_password_register">
                         </div>
                     </div>
-                    <div class="styled-input" id="EmailCode" style="display:none">
-                        <input  type="text" name="EmailCode" >
+                    @{ 
+                        var InputEmailCode = "none";
+                        var InputSlideToUnlock = "block";
+                        if (Model!= null) {
+                            InputEmailCode = Model.InputEmailCode;
+                            InputSlideToUnlock = Model.InputSlideToUnlock;
+                        }
+                    }
+                    <div class="styled-input" id="EmailCode" style="display:@InputEmailCode">
+                        <input type="text" name="EmailCode">
                         <label>Email Verfication Code</label>
-                        <span ></span>
+                        <span></span>
+                        <div class="mod-sendcode">
+                            <button type="button" class="mod-sendcode-btn" name="countdownsendcode" id="countdownsendcode">Gửi lại</button>
+                        </div>
+                        <div id="alert_label_emailcode_register">
+                        </div>
                     </div>
-                    <div class="styled-input">
+                    <div class="styled-input" style="display:@InputSlideToUnlock">
                         <input type="range" class="slideToUnlock" value="0" max="100" />
-                    </div>
-                    <div class="styled-input">
-                        <input asp-for="ConfirmPassword" type="password" name="ConfirmPassword" required="">
-                        <label>Xác nhận mật khẩu</label>
-                        <span asp-validation-for="ConfirmPassword"></span>
-                        <div id="alert_label_confirmpassword_register">
+                        <div id="alert_label_emailcodeinput_register">
                         </div>
                     </div>
                     <button id="register" name="register" type="button">Đăng ký</button>
                 </form>
-                <ul class="social-nav model-3d-0 footer-social w3_agile_social top_agile_third">
+                <ul class="social-nav social-nav-custom model-3d-0 model-3d-0-custom footer-social w3_agile_social top_agile_third">
                     <li>
-                        <a href="#" class="facebook">
-                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <a href="Account/FacebookLogin" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true">   Đăng ký bằng Facebook</i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true">   Đăng ký bằng Facebook</i></div>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="twitter">
-                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="instagram">
-                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="pinterest">
-                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        <a href="Account/GoogleLogin" class="pinterest">
+                            <div class="front"><i class="fa fa-google" aria-hidden="true">   Đăng ký bằng Google</i></div>
+                            <div class="back"><i class="fa fa-google" aria-hidden="true">   Đăng ký bằng Google</i></div>
                         </a>
                     </li>
                 </ul>

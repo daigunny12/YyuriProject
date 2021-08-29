@@ -3,8 +3,9 @@ using Yyuri.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Yyuri.Service.EmailEngine;
 using Yyuri.Services.Extensions;
+using Yyuri.Services.EmailEngine;
+
 namespace Yyuri.Services
 {
     public static class ServiceCollectionExtension
@@ -23,8 +24,7 @@ namespace Yyuri.Services
             services.AddSingleton<ILoggerManager, LoggerManager>();
 
             //---------------------------------Email Service-------------------------------------
-            services.AddTransient<IEmailSender, EmailSender>();
-            services.AddTransient<IViewRenderService, ViewRenderService>();
+            services.AddScoped<IEmailService, EmailService>();
             //---------------------------------Image Helper---------------------------------------
             services.AddScoped<IAccountService, AccountService>();
 

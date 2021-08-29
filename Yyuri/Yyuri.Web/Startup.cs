@@ -118,6 +118,14 @@ namespace Yyuri.Web
                      opts.ClientSecret = Configuration["Facebook:AppSecret"];
                      opts.SignInScheme = IdentityConstants.ExternalScheme;
                  });
+
+            //add session
+            services.AddDistributedMemoryCache();
+            services.AddSession((option) =>
+            {
+                option.Cookie.Name = "YYuriCookie";
+                option.IdleTimeout = new System.TimeSpan(0, 30, 0);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -164,6 +172,10 @@ namespace Yyuri.Web
             app.UseAuthorization();
 
             app.UseMiddleware<ExceptionMiddleware>();
+
+            //add session
+            app.UseSession();
+
             //app.UseAuthentication();
             app.UseMvc(routes =>
             {
@@ -174,6 +186,8 @@ namespace Yyuri.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
 
             var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
             XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));

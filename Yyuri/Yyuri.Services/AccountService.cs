@@ -41,19 +41,41 @@ namespace Yyuri.Services
             return this.UnitOfWork.UserRepo.UserNameExists(userName);
         }
 
-        public User InsertForFacebook(User entity)
+        //public User InsertForFacebook(User entity)
+        //{
+        //    var user = this.UnitOfWork.UserRepo.UserNameExist(entity.UserName);
+        //    if (user == null)
+        //    {
+        //        UnitOfWork.UserRepo.Insert(entity);
+        //        UnitOfWork.SaveChanges();
+        //        return entity;
+        //    }
+        //    else
+        //    {
+        //        return user;
+        //    }
+        //}
+
+        public Guid InsertVerificationEmail(string email, string emailCode)
         {
-            var user = this.UnitOfWork.UserRepo.UserNameExist(entity.UserName);
-            if (user == null)
+            var ve = this.UnitOfWork.VerificationEmailRepo.VerificationEmailExist(email);
+            if (ve != null)
+                UnitOfWork.VerificationEmailRepo.Delete(ve);
+
+            var entity = new VerificationEmail()
             {
-                UnitOfWork.UserRepo.Insert(entity);
-                UnitOfWork.SaveChanges();
-                return entity;
-            }
-            else
-            {
-                return user;
-            }
+                Id = Guid.NewGuid(),
+                Email = email,
+                Code = emailCode
+            };
+            UnitOfWork.VerificationEmailRepo.Insert(entity);
+            UnitOfWork.SaveChanges();
+            return entity.Id;
+        }
+
+        public bool CheckVerificationEmail(string email, string code)
+        {
+            return UnitOfWork.VerificationEmailRepo.CheckVerificationEmail(email, code);
         }
     }
 }

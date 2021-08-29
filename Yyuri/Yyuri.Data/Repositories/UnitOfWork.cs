@@ -9,6 +9,8 @@ using Yyuri.Data.Accounts.Repositories;
 using Ats.Data.Accounts.Repositories;
 using Yyuri.Domain.Shop;
 using Yyuri.Data.Repositories.Shop;
+using Yyuri.Domain.Account;
+using Yyuri.Data.Repositories.Account;
 
 namespace Yyuri.Data.Repositories
 {
@@ -29,6 +31,7 @@ namespace Yyuri.Data.Repositories
         private IRoleRepository _roleRepo;
 
         private IProfileRepository _profileRepo;
+        private IVerificationEmailRepository _verificationEmailRepo;
         private IUserRepository _userRepo;
 
         private IAddressRepository _addressRepo;
@@ -80,6 +83,7 @@ namespace Yyuri.Data.Repositories
         public IGroupRepository GroupRepo => _groupRepo ?? (_groupRepo = new GroupRepository(_dbContext));
         public IRoleRepository RoleRepo => _roleRepo ?? (_roleRepo = new RoleRepository(_dbContext));
         public IProfileRepository ProfileRepo => _profileRepo ?? (_profileRepo = new ProfileRepository(_dbContext));
+        public IVerificationEmailRepository VerificationEmailRepo => _verificationEmailRepo ?? (_verificationEmailRepo = new VerificationEmailRepository(_dbContext));
         public IUserRepository UserRepo => _userRepo ?? (_userRepo = new UserRepository(_dbContext));
 
         public IContactDetailRepository ContactRepo => _contactDetailRepo ?? (_contactDetailRepo = new ContactDetailRepository(_dbContext));
